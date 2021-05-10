@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.LinkedList;
+
 public class Specimen {
     private String name;
     private int cageNumber;
@@ -8,6 +11,12 @@ public class Specimen {
         setCage(c);
         setTOA(s);
     }
+    LinkedList makeList(Specimen[] animals){
+        LinkedList<Specimen>specimen=new LinkedList<>();
+        Collections.addAll(specimen, animals);
+        return specimen;
+    }
+
     public void setName(String a){ name = a; }
     public void setCage(int c){ cageNumber = c; }
     public void setTOA(Species s){ toa = s; }
@@ -17,5 +26,13 @@ public class Specimen {
     public String toString()
     {
         return name + " is a " + toa + " in cage " + cageNumber;
+    }
+
+    public LinkedList<Species> makeSpeciesList( LinkedList<Specimen> animals ){
+        LinkedList<Species>speciesList=new LinkedList<>();
+        for (Specimen animal : animals) {
+            speciesList.add(animal.getTOA());
+        }
+        return speciesList;
     }
 }
