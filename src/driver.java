@@ -28,6 +28,8 @@ public class driver {
         //Question set 4
         //a. It exports a type and a set of operations which are called the interface.
 
+    int choice;
+    String name;
 
 
     }
